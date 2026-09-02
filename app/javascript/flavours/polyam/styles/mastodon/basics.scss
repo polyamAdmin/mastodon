@@ -15,7 +15,7 @@ html {
   &[data-redesign='true'] {
     --font-body: Inter, sans-serif;
 
-    background: var(--color-bg-blend-solid);
+    background: var(--color-bg-blend);
   }
 
   --outline-focus-default: 2px solid var(--color-border-brand);
