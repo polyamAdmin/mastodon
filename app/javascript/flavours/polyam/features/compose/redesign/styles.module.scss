@@ -121,7 +121,7 @@
   }
 
   textarea {
-    @include mixins.type-body-lg;
+    @include mixins.type-body;
 
     border: none;
     width: 100%;
