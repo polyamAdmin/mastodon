@@ -82,4 +82,10 @@ class Themes
       [flavour, skins_for(flavour).map { |skin| [flavour, skin] }]
     end
   end
+
+  def available_theme_colors(theme)
+    return [] unless @conf[theme].is_a?(Hash) && @conf[theme]['colors'].present?
+
+    @conf[theme]['colors']
+  end
 end
