@@ -60,6 +60,7 @@ class Form::AdminSettings
     email_footer_text
     opt_in_server_directory
     opt_in_server_recommendation
+    postpone_confirmation_emails
   ).freeze
 
   INTEGER_KEYS = %i(
@@ -92,6 +93,7 @@ class Form::AdminSettings
     opt_in_server_recommendation
     search_preview
     wrapstodon
+    postpone_confirmation_emails
   ).freeze
 
   UPLOAD_KEYS = %i(
