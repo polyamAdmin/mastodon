@@ -51,5 +51,8 @@ jobs:
       - name: Check that all required locale files exist
         run: bin/rake repo:check_locales_files
 
+      - name: Run yaml/erb linter
+        run: bin/rake yaml:lint
+
       - name: Check that no locale string contains "post"
         run: bin/rake tootkeeper:check
