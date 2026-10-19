@@ -24,6 +24,7 @@ defaults: &defaults
   norss: false
   flavour: 'polyam'
   skin: 'default'
+  theme_color: 'indigo'
   thumbnail_description: ''
   trends: true
   trendable_by_default: false
