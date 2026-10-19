@@ -95,13 +95,17 @@
  */
 
 @mixin elevation-1 {
-  border: var(--border-w-md) solid var(--color-border-strong);
-  box-shadow: 0 1px 0 var(--color-border-strong);
+  border: var(--border-default);
+  box-shadow:
+    0 0 var(--space-half) 0 var(--color-border-primary),
+    0 var(--space-1) var(--space-2) 0 var(--color-bg-highlight);
 }
 
 @mixin elevation-2 {
-  border: var(--border-w-md) solid var(--color-border-strong);
-  box-shadow: 1px 2px 0 var(--color-border-strong);
+  border: var(--border-default);
+  box-shadow:
+    0 0 var(--space-half) 0 var(--color-border-primary),
+    0 var(--space-1) var(--space-2) 0 var(--color-bg-highlight);
 }
 
 /**
