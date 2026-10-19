@@ -205,7 +205,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_31_125329) do
     t.bigint "moved_to_account_id"
     t.text "note", default: "", null: false
     t.string "outbox_url", default: "", null: false
-    t.text "private_key"
     t.integer "protocol", default: 0, null: false
     t.text "public_key", default: "", null: false
     t.datetime "requested_deletion_at"
