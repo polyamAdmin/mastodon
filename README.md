@@ -45,6 +45,11 @@ Fairy Floss and Homogay.
 Polyam-glitch comes with its own flavour based on the glitch flavour. \
 All features are available for it.
 
+### Polyam flavour
+
+Polyam-glitch comes with its own flavour based on the glitch flavour. \
+All features are available for it.
+
 ### Collapsing
 
 Originally a glitch-soc feature which got removed in v4.4. \
