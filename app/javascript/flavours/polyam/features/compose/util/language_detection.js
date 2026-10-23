@@ -56,7 +56,7 @@ const ISO_639_MAP = {
   vie: 'vi', // Vietnamese
 };
 
-const guessLanguage = (text) => {
+export const guessLanguage = (text) => {
   text = replaceUrls(replaceMentions(text, () => ''), '');
 
   if (text.length > 20) {
