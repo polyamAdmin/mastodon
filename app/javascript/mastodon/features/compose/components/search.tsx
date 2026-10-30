@@ -112,12 +112,11 @@ export const Search: React.FC<{
   const [selectedOption, setSelectedOption] = useState(-1);
   const [quickActions, setQuickActions] = useState<SearchOption[]>([]);
   const [shouldOpenOnFocus, setShouldOpenOnFocus] = useState(false);
-  const focusAfterNavigation = useFocusAfterNavigation(
-    FOCUS_TARGET.SEARCH,
-    () => {
+  const focusAfterNavigation = useFocusAfterNavigation(FOCUS_TARGET.SEARCH, {
+    onAfterFocus: () => {
       setShouldOpenOnFocus(true);
     },
-  );
+  });
 
   const unfocus = useCallback(() => {
     document.querySelector('.ui')?.parentElement?.focus();
