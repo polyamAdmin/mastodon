@@ -88,7 +88,7 @@ RSpec.describe InstancePresenter do
 
       # Polyam: Different repo
       it 'defaults to the core polyam-glitch repo URL' do
-        expect(instance_presenter.source_url).to eq('https://github.com/polyamspace/mastodon')
+        expect(instance_presenter.source_url).to eq('https://code.polyam.space/PolyamSpace/polyam-glitch')
       end
     end
 

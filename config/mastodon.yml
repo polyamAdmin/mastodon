@@ -8,7 +8,7 @@ shared:
     api_url: <%= ENV.fetch('DONATION_CAMPAIGNS_URL', nil)&.to_json %>
     environment: <%= ENV.fetch('DONATION_CAMPAIGNS_ENVIRONMENT', nil)&.to_json %>
   source:
-    base_url: <%= ENV.fetch('SOURCE_BASE_URL', nil)&.to_json %>
+    base_url: <%= ENV.fetch('SOURCE_BASE_URL', 'https://code.polyam.space/PolyamSpace/polyam-glitch')&.to_json %>
     repository: <%= ENV.fetch('GITHUB_REPOSITORY', 'polyamspace/mastodon') %>
     tag: <%= ENV.fetch('SOURCE_TAG', nil) %>
   version:
