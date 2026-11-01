@@ -55,7 +55,8 @@ module Mastodon
     end
 
     def source_base_url
-      source_configuration[:base_url] || "https://github.com/#{repository}"
+      # Polyam: Allow "{repository}" in url which is then replaced with the repository
+      (source_configuration[:base_url] || 'https://github.com/{repository}').to_s.gsub('{repository}', repository)
     end
 
     # specify git tag or commit hash here
