@@ -67,7 +67,7 @@ RSpec.describe InstancePresenter do
   describe '#source_url' do
     context 'with the GITHUB_REPOSITORY env variable set' do
       around do |example|
-        ClimateControl.modify GITHUB_REPOSITORY: 'other/repo' do
+        ClimateControl.modify GITHUB_REPOSITORY: 'other/repo', SOURCE_BASE_URL: 'https://github.com/{repository}' do
           reload_configuration
           example.run
         end
@@ -88,7 +88,7 @@ RSpec.describe InstancePresenter do
 
       # Polyam: Different repo
       it 'defaults to the core polyam-glitch repo URL' do
-        expect(instance_presenter.source_url).to eq('https://github.com/polyamspace/mastodon')
+        expect(instance_presenter.source_url).to eq('https://code.polyam.space/PolyamSpace/polyam-glitch')
       end
     end
 
