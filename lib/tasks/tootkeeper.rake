@@ -5,6 +5,8 @@ BACKEND_PATHS = ['config/locales', 'config/locales-glitch', 'config/locales-poly
 
 IGNORED_KEYS = ['dmca_address'].freeze
 
+POST_REGEX = /\bpost(?!pone)/i
+
 def get_key_value(hash, &block)
   hash.each do |k, v|
     if v.is_a? Hash
@@ -41,7 +43,7 @@ namespace :tootkeeper do
       JSON.load_file(path).each do |k, v|
         next if k.in?(IGNORED_KEYS)
 
-        if v.downcase.include?('post')
+        if POST_REGEX.match?(v)
           matches = true
           puts pastel.red("#{path}: #{pastel.bold(k)} contains \"post\"")
         end
@@ -60,7 +62,7 @@ namespace :tootkeeper do
       get_key_value(YAML.safe_load_file(path)) do |k, v|
         next if v.nil? || k.in?(IGNORED_KEYS)
 
-        if v.downcase.include?('post')
+        if POST_REGEX.match?(v)
           matches = true
           puts pastel.red("#{path}: #{pastel.bold(k)} contains \"post\"")
         end
