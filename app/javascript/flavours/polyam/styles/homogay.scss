@@ -9,8 +9,11 @@ html {
 
 // Keep selectors in sync with styles/mastodon/tokens/index.scss
 // to avoid system skin overriding custom skin
-[data-color-scheme='dark'],
-html:not([data-color-scheme]),
+[data-theme-color='homogay'][data-color-scheme='dark'],
+html:not([data-color-scheme])[data-theme-color='homogay'],
+html:not([data-theme-color])[data-color-scheme='dark'],
+[data-user-theme='homogay'][data-color-scheme='dark'],
+html:not([data-color-scheme])[data-user-theme='homogay'],
 [data-user-theme='homogay'][data-color-scheme='light'] {
   color-scheme: dark;
 
