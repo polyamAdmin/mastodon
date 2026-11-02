@@ -17,7 +17,7 @@ module Mastodon
     end
 
     def default_prerelease
-      'alpha.1'
+      'alpha.1' # Polyam: Comment to force merge conflict
     end
 
     def prerelease
