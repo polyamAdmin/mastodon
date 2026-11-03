@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.18
+# syntax=docker/dockerfile:1.28
 
 # This file is designed for production server deployment, not local development work
 # For a containerized local dev environment, see: https://github.com/mastodon/mastodon/blob/main/docs/DEVELOPMENT.md#docker
@@ -210,7 +210,7 @@ FROM media-build AS libvips
 
 # libvips version to compile, change with [--build-arg VIPS_VERSION="8.15.2"]
 # renovate: datasource=github-releases depName=libvips packageName=libvips/libvips
-ARG VIPS_VERSION=8.18.5
+ARG VIPS_VERSION=8.18.7
 # libvips download URL, change with [--build-arg VIPS_URL="https://github.com/libvips/libvips/releases/download"]
 ARG VIPS_URL=https://github.com/libvips/libvips/releases/download
 
@@ -305,7 +305,7 @@ FROM ruby-build AS bundler
 ARG TARGETPLATFORM
 
 # Copy Gemfile config into working directory
-COPY Gemfile* /opt/mastodon/
+COPY .ruby-version Gemfile* /opt/mastodon/
 
 # Copy libvips for gems that need it during install
 COPY --from=libvips /usr/local/libvips/lib /usr/local/lib
