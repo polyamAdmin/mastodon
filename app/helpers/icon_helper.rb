@@ -89,6 +89,7 @@ module IconHelper
     repeat: 'boost',
     reply: 'reply',
     report: 'circle-exclamation',
+    robot: 'robot',
     safety_check: 'mobile-screen',
     save: 'floppy-disk',
     search: 'magnifying-glass',
