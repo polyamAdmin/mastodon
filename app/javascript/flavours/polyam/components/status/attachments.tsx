@@ -4,7 +4,7 @@ import { openModal } from '@/flavours/polyam/actions/modal';
 import type { DeployPictureInPictureCallback } from '@/flavours/polyam/actions/picture_in_picture';
 import { deployPictureInPicture } from '@/flavours/polyam/actions/picture_in_picture';
 import { CollectionPreviewCard } from '@/flavours/polyam/features/collections/components/collection_preview_card';
-import Card from '@/flavours/polyam/features/status/components/card';
+import { Card } from '@/flavours/polyam/features/status/components/card';
 import { useExpandedStatus } from '@/flavours/polyam/hooks/useStatus';
 import { useToggle } from '@/flavours/polyam/hooks/useToggle';
 import { displayMedia } from '@/flavours/polyam/initial_state';
