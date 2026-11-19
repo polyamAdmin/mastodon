@@ -30,9 +30,10 @@ RSpec.describe 'Admin Export Domain Blocks' do
       it 'shows the imported policies for review and saves the domain blocks' do
         upload_file('domain_blocks.csv')
 
+        # Polyam: 4 instead of 3 due to rejected report
         expect(page)
           .to have_title(I18n.t('admin.export_domain_blocks.import.title'))
-          .and have_css('.batch-table__row', count: 3)
+          .and have_css('.batch-table__row', count: 4)
 
         within('.batch-table__row', text: 'bad.domain') do
           expect(page)
@@ -50,11 +51,17 @@ RSpec.describe 'Admin Export Domain Blocks' do
             .and have_text('reject media and test unicode characters ♥')
         end
 
+        # Polyam: Import of rejected reports
+        within('.batch-table__row', text: 'reject.reports') do
+          expect(page)
+            .to have_text(I18n.t('admin.instances.content_policies.policies.reject_reports'))
+        end
+
+        # Polyam: Added export/import of rejected reports
         expect { confirm_import }
-          .to change(DomainBlock, :count).by(3)
-        # Polyam: Added export for rejected reports
+          .to change(DomainBlock, :count).by(4)
         expect(DomainBlock.pluck(:domain, :severity))
-          .to contain_exactly(['bad.domain', 'silence'], ['worse.domain', 'suspend'], ['reject.media', 'noop'], ['reject.reports', :noop])
+          .to contain_exactly(['bad.domain', 'silence'], ['worse.domain', 'suspend'], ['reject.media', 'noop'], ['reject.reports', 'noop'])
         expect(page)
           .to have_text(I18n.t('admin.domain_blocks.created_msg'))
       end

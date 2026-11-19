@@ -19,6 +19,7 @@ RSpec.describe 'Admin Export Domain Blocks' do
       Fabricate(:domain_block, domain: 'bad.domain', severity: 'silence', public_comment: 'bad server')
       Fabricate(:domain_block, domain: 'worse.domain', severity: 'suspend', reject_media: true, reject_reports: true, public_comment: 'worse server', obfuscate: true)
       Fabricate(:domain_block, domain: 'reject.media', severity: 'noop', reject_media: true, public_comment: 'reject media and test unicode characters ♥')
+      Fabricate(:domain_block, domain: 'reject.reports', severity: 'noop', reject_reports: true, public_comment: 'reject reports') # Polyam
       Fabricate(:domain_block, domain: 'no.op', severity: 'noop', public_comment: 'noop')
     end
 
