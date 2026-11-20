@@ -9,7 +9,7 @@ import MediaGallery from 'flavours/polyam/components/media_gallery';
 import ModalRoot from 'flavours/polyam/components/modal_root';
 import { Poll } from 'flavours/polyam/components/poll';
 import { Audio } from 'flavours/polyam/features/audio';
-import Card from 'flavours/polyam/features/status/components/card';
+import { Card } from 'flavours/polyam/features/status/components/card';
 import { MediaModal } from 'flavours/polyam/features/ui/components/media_modal';
 import { Video } from 'flavours/polyam/features/video';
 import { IntlProvider } from 'flavours/polyam/locales';

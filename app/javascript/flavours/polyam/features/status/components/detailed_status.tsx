@@ -44,7 +44,7 @@ import type {
 import { useAppSelector } from 'flavours/polyam/store';
 import { compareUrls } from 'flavours/polyam/utils/compare_urls';
 
-import Card from './card';
+import { Card } from './card';
 
 const messages = defineMessages({
   localOnly: {
