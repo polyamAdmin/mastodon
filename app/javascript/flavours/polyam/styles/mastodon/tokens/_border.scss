@@ -6,7 +6,7 @@
 
 @mixin borders {
   --border-thin: var(--bw-thin) solid var(--color-border-primary);
-  --border-normal: var(--bw-default) solid var(--color-border-primary);
+  --border-default: var(--bw-default) solid var(--color-border-primary);
   --border-strong: var(--bw-thick) solid var(--color-border-strong);
   --border-input: var(--bw-thin) solid var(--color-border-input);
 }
